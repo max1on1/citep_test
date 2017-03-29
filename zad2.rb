@@ -7,9 +7,9 @@ db = SQLite3::Database.open "test.db"
 
 a = db.execute ( "SELECT `date`,
                          `time`,
+                         `number`,                 
                          `text`,
-                         `rate`,
-                         `number` 
+                         `rate`                      
                   FROM Quotes GROUP BY date")
 a.each do |quote|
   if quote.include? 'NULL'
